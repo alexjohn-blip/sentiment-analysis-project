@@ -27,5 +27,5 @@ def train_model(data_path="data/cleaned_reviews.csv",
     print("✅ Model trained and saved to", model_path)
     print("Accuracy:", acc)
 
-if _name_ == "_main_":
+if __name__ == "__main__":  
     train_model()

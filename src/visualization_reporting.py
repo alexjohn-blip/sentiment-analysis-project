@@ -16,5 +16,5 @@ def plot_distribution(data_path="data/cleaned_reviews.csv", out_path="reports/se
     plt.savefig(out_path)
     print("✅ Sentiment distribution saved to", out_path)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     plot_distribution()
