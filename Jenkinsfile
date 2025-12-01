@@ -10,15 +10,21 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('sentiment-analysis')
+                    if (isUnix()) {
+                        sh 'docker build -t sentiment-analysis .'
+                    } else {
+                        bat 'docker build -t sentiment-analysis .'
+                    }
                 }
             }
         }
         stage('Run Model Training') {
             steps {
                 script {
-                    docker.image('sentiment-analysis').inside {
-                        sh 'python src/model_training.py'
+                    if (isUnix()) {
+                        sh 'docker run --rm sentiment-analysis'
+                    } else {
+                        bat 'docker run --rm sentiment-analysis'
                     }
                 }
             }
