@@ -1,0 +1,11 @@
+# Tag and push Docker image to Docker Hub
+# Replace <your-username> with your Docker Hub username
+# Run these commands in your terminal (PowerShell):
+#
+docker tag sentiment-analysis <your-username>/sentiment-analysis:latest
+docker push <your-username>/sentiment-analysis:latest
+
+# Make sure you are logged in to Docker Hub:
+# docker login
+
+# After pushing, proceed to the next steps.

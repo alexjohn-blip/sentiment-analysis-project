@@ -1,0 +1,6 @@
+# Apply these commands in your terminal (with kubectl configured for your cluster):
+#
+kubectl apply -f k8s-deployment.yaml
+kubectl apply -f k8s-service.yaml
+
+# This will deploy your Docker image to Kubernetes and expose it as a service.

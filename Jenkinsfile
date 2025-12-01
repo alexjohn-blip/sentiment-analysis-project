@@ -29,5 +29,18 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'kubectl apply -f k8s-deployment.yaml'
+                        sh 'kubectl apply -f k8s-service.yaml'
+                    } else {
+                        bat 'kubectl apply -f k8s-deployment.yaml'
+                        bat 'kubectl apply -f k8s-service.yaml'
+                    }
+                }
+            }
+        }
     }
 }
